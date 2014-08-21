@@ -13,14 +13,21 @@ describe('tic-tac-toe', function(){
 		expect(game.Grid[1]).toEqual('O');
 	});
 
-	it("lets the computer place a X on the grid", function(){
+	it("lets the computer place an X on the grid", function(){
 		game.placeCross(1);
-		expect(game.Grid[1]).toEqual('X')
-	})
+		expect(game.Grid[1]).toEqual('X');
+	});
 
 	it("won't let the player place a O on a square already in use", function(){
 		game.placeCross(1);
 		game.placeNought(1);
 		expect(game.Grid[1]).toEqual('X')
 	})
+
+	it("generates a random square in the grid for the computer to place a piece on", function(){
+		game.generateMove();
+		expect(game.computerMove).toEqual(jasmine.any(Number));
+		expect(game.Grid).toContain('X');
+	})
+
 });

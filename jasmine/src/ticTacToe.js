@@ -20,5 +20,11 @@ Game.prototype.placePiece = function(position, piece){
 			}
 		}
 	}
-
 }
+
+Game.prototype.generateMove = function(){
+	this.computerMove = Math.floor((Math.random() * 9) + 0);
+	this.placeCross(this.computerMove);
+}
+
+
