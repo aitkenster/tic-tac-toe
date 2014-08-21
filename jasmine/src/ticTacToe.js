@@ -14,17 +14,24 @@ Game.prototype.placeCross = function(position){
 
 Game.prototype.placePiece = function(position, piece){
 	if (this.Grid[position] === '' ){
-		for(var i=0; i<this.Grid.length;i++ ){
-			if (this.Grid[i]==this.Grid[position]){
-				this.Grid.splice(i,1,piece);
-			}
-		}
+				this.Grid.splice(position,1,piece);
 	}
 }
 
-Game.prototype.generateMove = function(){
-	this.computerMove = Math.floor((Math.random() * 9) + 0);
-	this.placeCross(this.computerMove);
+Game.prototype.getEmptySquares = function(){
+	var emptySquares = [];
+	for(var i=0; i<this.Grid.length; i++){
+		if(this.Grid[i] === "") {
+			emptySquares.push(i);
+		}
+	}
+	return emptySquares
 }
 
+// Game.prototype.generateMove = function(){
+// 	var emptySquares = [];
+// 	for(var=0; i<this.Grid.length; i++){
+// 		if(this.grid.length[i] === "") emptySquares.push(i);
+// 	}
+// }
 
