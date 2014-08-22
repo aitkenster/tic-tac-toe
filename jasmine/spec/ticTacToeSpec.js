@@ -11,7 +11,6 @@ describe('tic-tac-toe', function(){
 	it("lets the player place a O on the grid", function(){
 		game.placeNought(1);
 		expect(game.Grid[1]).toEqual('O');
-		expect(game.Grid[0]).not.toEqual('O');
 	});
 
 	it("lets the computer place an X on the grid", function(){
@@ -32,7 +31,7 @@ describe('tic-tac-toe', function(){
 		expect(game.emptySquares).toContain(5);
 	})
 
-	xit("generates a random unused square in the grid for the computer to place a piece on", function(){
+	it("generates a random unused square in the grid for the computer to place a piece on", function(){
 		game.generateMove();
 		expect(game.Grid).toContain('X');
 	})

@@ -2,6 +2,7 @@ function Game(){
 	this.Grid = ['', '', '',
 							 '', '', '',
 							 '', '', ''];
+	this.emptySquares = []
 };
 
 Game.prototype.placeNought = function(position){
@@ -19,19 +20,16 @@ Game.prototype.placePiece = function(position, piece){
 }
 
 Game.prototype.getEmptySquares = function(){
-	var emptySquares = [];
 	for(var i=0; i<this.Grid.length; i++){
 		if(this.Grid[i] === "") {
-			emptySquares.push(i);
+			this.emptySquares.push(i);
 		}
 	}
-	return emptySquares
 }
 
-// Game.prototype.generateMove = function(){
-// 	var emptySquares = [];
-// 	for(var=0; i<this.Grid.length; i++){
-// 		if(this.grid.length[i] === "") emptySquares.push(i);
-// 	}
-// }
+Game.prototype.generateMove = function(getEmptySquares){
+	this.getEmptySquares();
+	var computerMove = this.emptySquares[Math.floor(Math.random()*this.emptySquares.length)];
+	this.placeCross(computerMove);
+}
 
