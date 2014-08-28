@@ -34,13 +34,16 @@ Game.prototype.generateMove = function(getEmptySquares){
 	this.placeCross(computerMove);
 }
 
-// Game.prototype.checkHorizontalWinner = function(){
-// 	for(var i=0; i<this.Grid.length; i++){
-// 		if(this.Grid[firstSquare] != '' && this.Grid.indexOf(i) % 3 === 0){
-// 			this.checkEqual(this.Grid.indexOf(i) (this.Grid.indexOf(i+1), (this.Grid.indexOf(i+2))
-// 		}
-// 	}
-// }
+Game.prototype.checkHorizontalWinner = function(){
+	for(var i=0; i<this.Grid.length; i++){
+		if((this.Grid[i] != '')&& (i % 3 === 0)){
+			firstSquare = i;
+			secondSquare = (i+1);
+			thirdSquare = (i+2);
+			this.checkEqual(firstSquare, secondSquare, thirdSquare)
+		}
+	}
+}
 
 Game.prototype.checkEqual = function(firstSquare, secondSquare, thirdSquare){
 	if ((this.Grid[firstSquare] === this.Grid[secondSquare]) && (this.Grid[firstSquare] === this.Grid[thirdSquare])){

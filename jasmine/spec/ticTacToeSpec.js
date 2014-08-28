@@ -40,7 +40,8 @@ describe('tic-tac-toe', function(){
 		game.placeNought(0);
 		game.placeNought(1);
 		game.placeNought(2);
-		expect(game.Winner).toEqual("player");
+		game.checkHorizontalWinner();
+		expect(game.Winner).toEqual("Player");
 	})
 
 });
