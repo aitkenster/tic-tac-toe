@@ -34,51 +34,48 @@ Game.prototype.generateMove = function(getEmptySquares){
 	this.placeCross(computerMove);
 }
 
-Game.prototype.checkHorizontalWinner = function(){
+Game.prototype.checkForWinners = function(){
 	for(var i=0; i<this.Grid.length; i++){
-		if((this.Grid[i] != '')&& (i % 3 === 0)){
-			firstSquare = i;
-			secondSquare = (i+1);
-			thirdSquare = (i+2);
+		if(this.Grid[i] != ''){
+			this.checkHorizontalWinner(i);
+			this.checkVerticalWinner(i);
+			this.checkDiagonalWinner(i)
+		}
+	}
+} 
+
+Game.prototype.checkHorizontalWinner = function(square){
+		if(square % 3 === 0){
+			firstSquare = square;
+			secondSquare = (square+1);
+			thirdSquare = (square+2);
 			this.checkEqual(firstSquare, secondSquare, thirdSquare);
 		}
-	}
 }
 
-Game.prototype.checkVerticalWinner = function(){
-	for(var i=0; i<this.Grid.length; i++){
-		if((this.Grid[i] !='')&&(i <=2)){
-			firstSquare = i 
-			secondSquare = (i+3);
-			thirdSquare = (i+6);
+Game.prototype.checkVerticalWinner = function(square){
+		if(square <=2){
+			firstSquare = square; 
+			secondSquare = (square+3);
+			thirdSquare = (square+6);
 			this.checkEqual(firstSquare,secondSquare,thirdSquare);
 		}
-	}
 }
 
-Game.prototype.checkDiagonalWinner = function(){
-	for(var i=0; i<this.Grid.length; i++){
-		if((this.Grid[i] !='')&&((i===0) || (i===2))){
-				if(i===0){
-					firstSquare = i; 
-					secondSquare = (i+4);
-					thirdSquare = (i+8);
+Game.prototype.checkDiagonalWinner = function(square){
+		if((square===0) || (square===2)){
+				if(square===0){
+					firstSquare = square; 
+					secondSquare = (square+4);
+					thirdSquare = (square+8);
 			} else {
-				firstSquare = i; 
-				secondSquare = (i+2);
-				thirdSquare = (i+4);
+				firstSquare = square; 
+				secondSquare = (square+2);
+				thirdSquare = (square+4);
 			}
 			this.checkEqual(firstSquare,secondSquare,thirdSquare);
 		}
-	}
 }
-
-0,4,8
-2,4,6
-
-012
-345
-678
 
 Game.prototype.checkEqual = function(firstSquare, secondSquare, thirdSquare){
 	if ((this.Grid[firstSquare] === this.Grid[secondSquare]) && (this.Grid[firstSquare] === this.Grid[thirdSquare])){

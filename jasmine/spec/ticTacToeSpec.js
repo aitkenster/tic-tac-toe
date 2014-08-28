@@ -40,7 +40,7 @@ describe('tic-tac-toe', function(){
 		game.placeNought(3);
 		game.placeNought(4);
 		game.placeNought(5);
-		game.checkHorizontalWinner();
+		game.checkForWinners();
 		expect(game.Winner).toEqual("Player");
 	})
 
@@ -48,7 +48,7 @@ describe('tic-tac-toe', function(){
 		game.placeCross(1);
 		game.placeCross(4);
 		game.placeCross(7);
-		game.checkVerticalWinner();
+		game.checkForWinners();
 		expect(game.Winner).toEqual("Computer");
 	})
 
@@ -56,7 +56,7 @@ describe('tic-tac-toe', function(){
 		game.placeCross(0);
 		game.placeCross(4);
 		game.placeCross(8);
-		game.checkDiagonalWinner();
+		game.checkForWinners();
 		expect(game.Winner).toEqual("Computer");
 	})
 
