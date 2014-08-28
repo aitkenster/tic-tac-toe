@@ -52,4 +52,12 @@ describe('tic-tac-toe', function(){
 		expect(game.Winner).toEqual("Computer");
 	})
 
+	it("knows when the game has been won diagonally", function(){
+		game.placeCross(0);
+		game.placeCross(4);
+		game.placeCross(8);
+		game.checkDiagonalWinner();
+		expect(game.Winner).toEqual("Computer");
+	})
+
 });

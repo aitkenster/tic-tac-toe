@@ -56,6 +56,30 @@ Game.prototype.checkVerticalWinner = function(){
 	}
 }
 
+Game.prototype.checkDiagonalWinner = function(){
+	for(var i=0; i<this.Grid.length; i++){
+		if((this.Grid[i] !='')&&((i===0) || (i===2))){
+				if(i===0){
+					firstSquare = i; 
+					secondSquare = (i+4);
+					thirdSquare = (i+8);
+			} else {
+				firstSquare = i; 
+				secondSquare = (i+2);
+				thirdSquare = (i+4);
+			}
+			this.checkEqual(firstSquare,secondSquare,thirdSquare);
+		}
+	}
+}
+
+0,4,8
+2,4,6
+
+012
+345
+678
+
 Game.prototype.checkEqual = function(firstSquare, secondSquare, thirdSquare){
 	if ((this.Grid[firstSquare] === this.Grid[secondSquare]) && (this.Grid[firstSquare] === this.Grid[thirdSquare])){
 		this.getWinner(firstSquare)
