@@ -39,9 +39,10 @@ Game.prototype.checkForWinners = function(){
 		if(this.Grid[i] != ''){
 			this.checkHorizontalWinner(i);
 			this.checkVerticalWinner(i);
-			this.checkDiagonalWinner(i)
+			this.checkDiagonalWinner(i);
 		}
 	}
+	this.checkDraw();
 } 
 
 Game.prototype.checkHorizontalWinner = function(square){
@@ -89,4 +90,11 @@ Game.prototype.getWinner = function(firstSquare){
 	} else {
 		this.Winner = "Computer"
 	}
+}
+
+Game.prototype.checkDraw = function(){
+	if((this.emptySquares.length === 0) && (this.Winner === null)){
+		this.Winner = "Draw";
+	}
+
 }

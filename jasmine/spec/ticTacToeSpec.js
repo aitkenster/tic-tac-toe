@@ -60,4 +60,18 @@ describe('tic-tac-toe', function(){
 		expect(game.Winner).toEqual("Computer");
 	})
 
+	it("when the board is full and there are no winners, knows its a draw", function(){
+		game.placeCross(0);
+		game.placeCross(2);
+		game.placeCross(3);
+		game.placeCross(5);
+		game.placeCross(7);
+		game.placeNought(1);
+		game.placeNought(4);
+		game.placeNought(6);
+		game.placeNought(8);
+		game.checkForWinners();
+		expect(game.Winner).toEqual("Draw");
+	})
+
 });
