@@ -37,11 +37,19 @@ describe('tic-tac-toe', function(){
 	})
 
 	it("knows when the game has been won horizontally", function(){
-		game.placeNought(0);
-		game.placeNought(1);
-		game.placeNought(2);
+		game.placeNought(3);
+		game.placeNought(4);
+		game.placeNought(5);
 		game.checkHorizontalWinner();
 		expect(game.Winner).toEqual("Player");
+	})
+
+	it("knows when the game has been won vertically", function(){
+		game.placeCross(1);
+		game.placeCross(4);
+		game.placeCross(7);
+		game.checkVerticalWinner();
+		expect(game.Winner).toEqual("Computer");
 	})
 
 });

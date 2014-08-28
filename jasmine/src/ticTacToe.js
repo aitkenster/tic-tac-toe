@@ -40,7 +40,18 @@ Game.prototype.checkHorizontalWinner = function(){
 			firstSquare = i;
 			secondSquare = (i+1);
 			thirdSquare = (i+2);
-			this.checkEqual(firstSquare, secondSquare, thirdSquare)
+			this.checkEqual(firstSquare, secondSquare, thirdSquare);
+		}
+	}
+}
+
+Game.prototype.checkVerticalWinner = function(){
+	for(var i=0; i<this.Grid.length; i++){
+		if((this.Grid[i] !='')&&(i <=2)){
+			firstSquare = i 
+			secondSquare = (i+3);
+			thirdSquare = (i+6);
+			this.checkEqual(firstSquare,secondSquare,thirdSquare);
 		}
 	}
 }
