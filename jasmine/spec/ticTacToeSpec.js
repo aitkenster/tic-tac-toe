@@ -36,4 +36,11 @@ describe('tic-tac-toe', function(){
 		expect(game.Grid).toContain('X');
 	})
 
+	it("knows when the game has been won horizontally", function(){
+		game.placeNought(0);
+		game.placeNought(1);
+		game.placeNought(2);
+		expect(game.Winner).toEqual("player");
+	})
+
 });
