@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic-Tac-Toe</title>
+</head>
+<body>
+<span class="grid">
+	<table>
+		<tr>
+			<td class="a1"></td>
+			<td class="a2"></td>
+			<td class="a3"></td>
+		</tr>
+		<tr>
+			<td class="b1"></td>
+			<td class="b2"></td>
+			<td class="b3"></td>
+		</tr>
+		<tr>
+			<td class="c1"></td>
+			<td class="c2"></td>
+			<td class="c3"></td>
+		</tr>
+	</table>
+</span>
+</body>
+<script src="src/ticTacToe.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var game = new Game();
+
+		game.placeCross(0);
+
+		function updateBoard(){
+			$('.a1').text(game.Grid[0])
+			$('.a2').text(game.Grid[1])
+			$('.a3').text(game.Grid[2])
+			$('.b1').text(game.Grid[3])
+			$('.b2').text(game.Grid[4])
+			$('.b3').text(game.Grid[5])
+			$('.c1').text(game.Grid[6])
+			$('.c2').text(game.Grid[7])
+			$('.c3').text(game.Grid[8])
+		}
+		
+		updateBoard()
+
+	})
+</script>
+
+<style>
+	table{
+		border: 1px solid black;
+	}
+
+	td{
+		width: 40px;
+		height: 40px;
+		border: 1px solid black;
+	}
+</style>
+</html>
