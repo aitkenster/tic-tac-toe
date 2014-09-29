@@ -1,8 +1,6 @@
 Tic Tac Toe
 ==========
 
-
-Screenshot:
 ![](public/images/screenshot.png)
 
 
