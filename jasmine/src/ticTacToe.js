@@ -21,6 +21,7 @@ Game.prototype.placePiece = function(position, piece){
 }
 
 Game.prototype.getEmptySquares = function(){
+	this.emptySquares = []
 	for(var i=0; i<this.Grid.length; i++){
 		if(this.Grid[i] === "") {
 			this.emptySquares.push(i);
@@ -32,6 +33,7 @@ Game.prototype.generateMove = function(getEmptySquares){
 	this.getEmptySquares();
 	var computerMove = this.emptySquares[Math.floor(Math.random()*this.emptySquares.length)];
 	this.placeCross(computerMove);
+	this.getEmptySquares();
 }
 
 Game.prototype.checkForWinners = function(){
@@ -102,6 +104,7 @@ Game.prototype.checkDraw = function(){
 Game.prototype.gameSequence = function(position){
 			this.placeNought(position);
 			this.checkForWinners;
-			this.generateMove();
+			this.generateMove(this.getEmptySquares);
+			console.log(this.emptySquares);
 			this.checkForWinners;
 }
