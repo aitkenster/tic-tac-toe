@@ -23,6 +23,8 @@
 		</tr>
 	</table>
 </span>
+
+<h1> The winner is...<span class="winner"></span></h1>
 </body>
 <script src="src/ticTacToe.js"></script>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -40,6 +42,7 @@
 			$('.c1').text(game.Grid[6])
 			$('.c2').text(game.Grid[7])
 			$('.c3').text(game.Grid[8])
+			$('.winner').text(game.Winner)
 		}
 		
 		updateBoard()

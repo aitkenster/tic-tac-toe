@@ -37,14 +37,16 @@ Game.prototype.generateMove = function(getEmptySquares){
 }
 
 Game.prototype.checkForWinners = function(){
-	for(var i=0; i<this.Grid.length; i++){
-		if(this.Grid[i] != ''){
-			this.checkHorizontalWinner(i);
-			this.checkVerticalWinner(i);
-			this.checkDiagonalWinner(i);
+	if(this.Winner === null){
+		for(var i=0; i<this.Grid.length; i++){
+			if(this.Grid[i] != ''){
+				this.checkHorizontalWinner(i);
+				this.checkVerticalWinner(i);
+				this.checkDiagonalWinner(i);
+			}
 		}
+		this.checkDraw();
 	}
-	this.checkDraw();
 } 
 
 Game.prototype.checkHorizontalWinner = function(square){
@@ -105,6 +107,5 @@ Game.prototype.gameSequence = function(position){
 			this.placeNought(position);
 			this.checkForWinners;
 			this.generateMove(this.getEmptySquares);
-			console.log(this.emptySquares);
-			this.checkForWinners;
+			this.checkForWinners();
 }
