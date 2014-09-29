@@ -7,19 +7,19 @@
 <span class="grid">
 	<table>
 		<tr>
-			<td class="a1"></td>
-			<td class="a2"></td>
-			<td class="a3"></td>
+			<td><button class="a1"></button></td>
+			<td><button class="a2"></button></td>
+			<td><button class="a3"></button></td>
 		</tr>
 		<tr>
-			<td class="b1"></td>
-			<td class="b2"></td>
-			<td class="b3"></td>
+			<td><button class="b1"></td>
+			<td><button class="b2"></td>
+			<td><button class="b3"></td>
 		</tr>
 		<tr>
-			<td class="c1"></td>
-			<td class="c2"></td>
-			<td class="c3"></td>
+			<td><button class="c1"></td>
+			<td><button class="c2"></td>
+			<td><button class="c3"></td>
 		</tr>
 	</table>
 </span>
@@ -29,8 +29,6 @@
 <script>
 	$(document).ready(function(){
 		var game = new Game();
-
-		game.placeCross(0);
 
 		function updateBoard(){
 			$('.a1').text(game.Grid[0])
@@ -45,6 +43,43 @@
 		}
 		
 		updateBoard()
+
+		$('.a1').on('click', function(){
+			game.gameSequence(0)
+			updateBoard();
+		})
+		$('.a2').on('click', function(){
+			game.gameSequence(1);
+			updateBoard();
+		})
+		$('.a3').on('click', function(){
+			game.gameSequence(2);
+			updateBoard();
+		})
+		$('.b1').on('click', function(){
+			game.gameSequence(3);
+			updateBoard();
+		})
+		$('.b2').on('click', function(){
+			game.gameSequence(4);
+			updateBoard();
+		})
+		$('.b3').on('click', function(){
+			game.gameSequence(5);
+			updateBoard();
+		})
+		$('.c1').on('click', function(){
+			game.gameSequence(6);
+			updateBoard();
+		})
+		$('.c2').on('click', function(){
+			game.gameSequence(7);
+			updateBoard();
+		})
+		$('.c3').on('click', function(){
+			game.gameSequence(8);
+			updateBoard();
+		})
 
 	})
 </script>

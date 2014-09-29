@@ -98,3 +98,10 @@ Game.prototype.checkDraw = function(){
 	}
 
 }
+
+Game.prototype.gameSequence = function(position){
+			this.placeNought(position);
+			this.checkForWinners;
+			this.generateMove();
+			this.checkForWinners;
+}

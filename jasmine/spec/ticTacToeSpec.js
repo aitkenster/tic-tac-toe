@@ -1,4 +1,4 @@
-
+describe('tic-tac-toe', function(){
 	beforeEach(function(){
 		game = new Game
 	});
