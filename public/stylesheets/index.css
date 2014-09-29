@@ -1,0 +1,21 @@
+	body{
+				font-family: sans-serif;
+	}
+
+	td{
+		width: 40px;
+		height: 40px;
+
+	}
+	button {
+		border:none;
+		width:40px;
+		height: 40px;
+		font-size: 20px;
+	}
+
+	.reset {
+		width:80px;
+		background-color: white;
+	}
+

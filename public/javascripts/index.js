@@ -1,34 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tic-Tac-Toe</title>
-</head>
-<body>
-<span class="grid">
-	<table>
-		<tr>
-			<td><button class="a1"></button></td>
-			<td><button class="a2"></button></td>
-			<td><button class="a3"></button></td>
-		</tr>
-		<tr>
-			<td><button class="b1"></td>
-			<td><button class="b2"></td>
-			<td><button class="b3"></td>
-		</tr>
-		<tr>
-			<td><button class="c1"></td>
-			<td><button class="c2"></td>
-			<td><button class="c3"></td>
-		</tr>
-	</table>
-</span>
-
-<h1> The winner is...<span class="winner"></span></h1>
-</body>
-<script src="src/ticTacToe.js"></script>
-<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
 	$(document).ready(function(){
 		var game = new Game();
 
@@ -84,18 +53,9 @@
 			updateBoard();
 		})
 
+		$('.reset').on('click', function(){
+			game = new Game();
+			updateBoard();
+		})
+
 	})
-</script>
-
-<style>
-	table{
-		border: 1px solid black;
-	}
-
-	td{
-		width: 40px;
-		height: 40px;
-		border: 1px solid black;
-	}
-</style>
-</html>
